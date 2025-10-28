@@ -241,7 +241,9 @@ ul {
 }
 
 /* Chefs Section */
+
 .chefs-title {
+    position: relative;
     width: 520px;
     margin: 0px auto 80px;
 }
@@ -252,16 +254,28 @@ ul {
 
 .chefs-title::before {
     display: block;
-    width: auto;
-    border: 2px solid var(--color-primary-light);
+    width: 352px;
+    border: 2px solid var(--color-brand-dark);
     content: '';
+}
+
+.chefs-title::before {
+    position: absolute;
+    left: -360px;
+    bottom: 0;
 }
 
 .chefs-title::after {
     display: block;
-    width: auto;
-    border: 2px solid var(--color-primary-light);
+    width: 352px;
+    border: 2px solid var(--color-brand-dark);
     content: '';
+}
+
+.chefs-title::after {
+    position: absolute;
+    right: -360px;
+    bottom: 0;
 }
 
 .chefs-list {
@@ -435,6 +449,29 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 32px 0;
+    position: relative;
+}
+
+.footer::before{
+    width: 180px;
+    height: 120px;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(../images/bulka.png);
+    content: '';
+}
+
+.footer::after {
+    width: 380px;
+    height: 190px;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-repeat: no-repeat;    
+    background-image: url(../images/dvibulki.png);
+    content: '';
 }
 
 .address-icon {
@@ -450,4 +487,37 @@ ul {
 .footer-logo,
 .img {
     width: 300px;
+}
+
+/* Modal */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: relative;
+    width: 880px;
+    height: 880px;
+    background-color: var(--color-primary-light);
+    border-radius: 32px;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: 0;
+}
+
+.modal-btn-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
 }
